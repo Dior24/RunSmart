@@ -34,19 +34,10 @@ gulp.task('styles', function () {
         .pipe(browserSync.stream());
 });
 
-gulp.task('scripts', function () {
-    return gulp.src('src/js/*.js')
-        .pipe(concat('allCode/scripts.min.js'))
-        .pipe(uglify())
-        .pipe(gulp.dest('src/js'))
-        .pipe(browserSync.stream());
-});
-
 gulp.task('watch', function () {
     gulp.watch('src/sass/*.+(scss|sass)', gulp.parallel('styles'));
-    gulp.watch('src/js/*.js', gulp.parallel('scripts'));
     gulp.watch('src/*.html').on("change", browserSync.reload);
 });
 
-gulp.task('default', gulp.parallel('watch', 'server', 'styles', 'scripts'));
+gulp.task('default', gulp.parallel('watch', 'server', 'styles'));
 
