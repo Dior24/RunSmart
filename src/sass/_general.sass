@@ -1,0 +1,83 @@
+@import 'mixin'
+@import 'variables'
+
+.promo
+    background-image: url('../img/promo-bg.png')
+    background-size: cover
+    background-position: left
+    background-repeat: no-repeat
+    padding: 20px 0 100px 0
+    .container
+        width: 950px
+        .header
+            display: flex
+            justify-content: space-between
+            .header__img
+                .logo
+                    width: 220,25px
+                    height: 35px
+                    margin: 15px 0
+            .header__text,
+            .header__phone
+                display: flex
+                flex-direction: column
+                text-align: center
+            .header__text
+                color: $color1
+                .header__text-item_1
+                    font-size: 12px
+                    margin: 3px 0 10px 0
+                .header__text-item_2
+                    font-size: 19px
+            .header__phone
+                .header__phone-number,
+                .header__button
+                    margin: 3px 0
+                .header__phone-number
+                    color: $color1
+                    text-decoration: none
+                    font-weight: 900
+                    transition: all 0.25s
+                    &:hover
+                        color: $color2
+                .header__button
+                    @include button
+
+        .product-presen
+            color: $color1
+            text-align: right
+            margin: 80px 0 0 0
+            .title
+                font-size: 36px
+                font-weight: 700
+                line-height: 36px
+                text-transform: uppercase
+            .subtitle
+                font-size: 21px
+                font-weight: 300
+                line-height: 24px
+                text-transform: uppercase
+            .delivery
+                display: flex
+                justify-content: end
+                text-align: center
+                margin: 40px 0 20px 0px
+                .delivery__block
+                    margin: 22px 
+                    .delivery__icon
+                        margin: 0 0 10px 0
+                    .delivery__text
+                        font-size: 13px
+            .product-presen__button
+                @include button
+                margin: 0 0 10px 0
+                padding: 15px 30px
+                font-size: 15px
+                text-transform: uppercase
+            .product-presen__subbutton
+                a
+                    color: $color1
+                    text-decoration: underline
+                    transition: all 0.25s
+                    &:hover
+                        color: $color2
