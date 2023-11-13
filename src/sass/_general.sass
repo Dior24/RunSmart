@@ -102,3 +102,30 @@
                 font-size: 18px
             .advantages__text
                 font-size: 14px
+
+.consultation
+    padding: 100px 0 
+    color: $color1
+    background-image: url('../img/consultation-bg.png')
+    .title
+        font-size: 36px
+        font-weight: 700
+        text-transform: uppercase
+    .subtitle
+        font-size: 20px
+        line-height: 30px 
+    .consultation__form
+        display: flex
+        flex-direction: column
+        .consultation__form-item
+            @include input
+        .consultation__form-button
+            @include button
+            width: 303px
+            height: 58px
+            margin: 8px 0
+            flex-shrink: 0
+            text-align: center
+            font-size: 16px
+            font-weight: 500
+            text-transform: uppercase
