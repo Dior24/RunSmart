@@ -134,20 +134,18 @@
     padding: 100px 0
     background-color: #EFEFEF
     .carousel__content
-        width: 600px
-        height: 600px
+        // width: 600px
+        // height: 600px
         margin: 0 auto
-        // width: 100%
-        // height: 100%
+        width: 50%
+        height: 50%
         .carousel__inner
             position: relative
             top: 0
             left: 0
             img
-                width: 600px
-                height: 600px
-                // width: 100%
-                // height: 100%
+                width: 100%
+                height: 100%
             .slick-prev, .slick-next
                 position: absolute
                 top: 50%
@@ -165,8 +163,9 @@
                 justify-content: center
                 background-color: none
                 list-style: none
-                border: 0
+                border: none
                 font-size: 0px
+                padding-left: 0
                 li
                     border: 0
                     button
@@ -179,3 +178,200 @@
                 .slick-active
                     button
                         background-color: #000
+                        border: 1px solid #000
+                        outline: none
+                        
+
+
+.catalog
+    padding: 100px 0
+    .title
+        text-align: center
+        font-weight: 400
+        line-height: 48px
+        text-transform: uppercase
+        padding-bottom: 38px
+
+    .catalog__tab
+        display: flex
+        justify-content: center
+        padding-left: 0
+        margin-bottom: 57px
+        .catalog__tab-item
+            width: 223px
+            height: 52px
+            margin: 0 5px
+            cursor: pointer
+            text-align: center
+            font-size: 18px
+            font-weight: 350
+            line-height: 48px
+            list-style: none
+            border: 2px solid #6d686884
+            transform: skewX(-25deg)
+            transition: all 0.25s
+            &:hover
+                box-shadow: 3px 3px 20px #6d686884
+                border: none
+            div
+                transform: skewX(25deg)
+            &_active
+                color: $color1
+                background-color: $color2
+                border: none
+                &:hover
+                    box-shadow: 3px 3px 20px $color2
+                    border: none
+
+    .catalog_content
+        display: none
+        justify-content: center
+        flex-wrap: wrap
+        &_active
+            display: flex
+        .catalog-item
+            position: relative
+            overflow: hidden
+            width: 303px
+            min-height: 440px
+            margin: 10px
+            padding: 20px
+            text-align: center
+            border: 2px solid #6d686836
+            .catalog-item__wrapper
+                width: calc(200% + 40px)
+                display: flex
+                .catalog-item__content
+                    width: 50%
+                    margin-right: 0px
+                    transform: translateX(-110%)
+                    transition: 0.5s all
+                    &_active
+                        transform: translateX(0%)
+                        margin-right: 20px
+                    .catalog-item_img
+                        max-width: 100%
+                        height: 200px
+                    .catalog-item_subtitle
+                        font-size: 16px
+                        font-weight: 700
+                        padding: 15px 0 0 0
+                    .catatog-item_descr
+                        padding: 15px 0 10px 0
+                        font-size: 14px
+                        font-weight: 300
+                    .catalog-item_link
+                        color: $color2
+                        font-size: 14px
+                        font-weight: 500
+                        text-decoration-line: underline
+                        text-transform: uppercase
+                        background: none
+                        border: none
+                        outline: none
+                        cursor: pointer
+                        display: block
+                        margin: 0 auto
+
+                .catalog-item__list
+                    position: relative
+                    width: 50%
+                    margin-left: 20px
+                    margin-bottom: 0px
+                    padding: 0 19px
+                    color: $color1
+                    text-align: left
+                    transform: translateX(0%)
+                    transition: 0.5s all
+                    &_active
+                        transform: translateX(-100%)
+                        margin-left: 0px
+                    &-item
+                        position: relative
+                        padding: 0px 0px 10px 0
+                        color: #555
+                        font-size: 14px
+                        font-weight: 400
+                        line-height: 21px
+                        list-style: none
+                        &::before
+                            content: ""
+                            position: absolute
+                            top: 10px
+                            left: -16px
+                            width: 5px
+                            height: 5px
+                            color: $color2
+                            background-color: $color2
+                    .catalog-item__back
+                        position: absolute
+                        bottom: 0
+                        left: 50%
+                        transform: translate(calc(-50% - 19px))
+                        display: block
+                        color: $color2
+                        font-size: 14px 
+                        font-weight: 500 
+                        text-decoration: underline
+                        text-transform: uppercase
+
+        // .descr
+        //     overflow: hidden
+        //     width: 50%
+        //     .descr__list
+        //         padding: 16px 16px 10px 32px
+        //         list-style-type: square
+        //         color: $color1
+        //         .descr__list-item
+        //             padding: 5px 0
+        //             color: #555
+        //             font-size: 14px
+        //             font-weight: 300
+        //             text-align: left
+        //             color: red
+        //             span
+        //                 color: #000
+        //     .descr-link
+        //         color: $color2
+        //         font-size: 14px
+        //         font-weight: 500
+        //         text-decoration-line: underline
+        //         text-transform: uppercase
+        //         border: none
+        //         background: none
+        //         outline: none
+        //         cursor: pointer
+        //         display: block
+        //         margin: 0 auto
+        // .descr.active
+        //     display: block 
+            
+        hr
+            width: auto
+            height: 1px
+            margin: 20px 
+            padding: 0 20px
+            color: #E8E8E8
+            background-color: #E8E8E8
+            border: none
+        .catalog-item_footer
+            display: flex
+            justify-content: space-between
+            padding: 0px
+            .catalog-item_prices
+                .catalog-item_old-price
+                    color: #555
+                    font-size: 15px
+                    font-weight: 300
+                    text-decoration-line: line-through
+                    text-align: left
+                .catalog-item_price
+                    font-size: 20px
+                    font-weight: 700
+                    text-align: left
+            .button
+                @include button
+                padding: 5px 35px
+                font-size: 14px
+                background-color: none
+                border: none
