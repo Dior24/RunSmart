@@ -1,6 +1,10 @@
 @import 'mixin'
 @import 'variables'
 
+body
+    position: relative
+    z-index: -1
+
 .header
     display: none
     
@@ -11,7 +15,7 @@
     background-repeat: no-repeat
     padding: 20px 0 100px 0
     .container
-        width: 950px
+        max-width: 950px
         .header
             display: flex
             justify-content: space-between
@@ -88,7 +92,7 @@
 .advantages
     position: relative
     z-index: -1
-    padding: 100px
+    padding: 100px 0
     background-color: #F6F6F6
     .title
         font-size: 36px
@@ -105,7 +109,7 @@
                 margin: 20px 0 40px 0
             .advantages__title
                 margin: 0 0 30px 0
-                font-size: 18px
+                font-size: 20px
             .advantages__text
                 font-size: 17px
 
