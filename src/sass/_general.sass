@@ -1,6 +1,9 @@
 @import 'mixin'
 @import 'variables'
 
+.header
+    display: none
+    
 .promo
     background-image: url('../img/promo-bg.png')
     background-size: cover
@@ -83,11 +86,14 @@
                         color: $color2
 
 .advantages
+    position: relative
+    z-index: -1
     padding: 100px
     background-color: #F6F6F6
     .title
-        font-size: 30px
+        font-size: 36px
         font-weight: 700
+        text-transform: uppercase
         text-align: center
     .advantages__content
         display: flex
@@ -101,9 +107,11 @@
                 margin: 0 0 30px 0
                 font-size: 18px
             .advantages__text
-                font-size: 14px
+                font-size: 17px
 
 .consultation
+    position: relative
+    z-index: -1 
     padding: 100px 0 
     color: $color1
     background-image: url('../img/consultation-bg.png')
@@ -131,8 +139,21 @@
             text-transform: uppercase
 
 .carousel
+    position: relative
+    z-index: -1 
     padding: 100px 0
     background-color: #EFEFEF
+    .container
+        width: 950px
+    .title
+        font-size: 36px
+        font-weight: 700
+        text-transform: uppercase
+        text-align: center
+    .subtitle
+        font-size: 20px
+        line-height: 30px
+        text-align: center
     .carousel__content
         // width: 600px
         // height: 600px
@@ -152,6 +173,7 @@
                 transform: translateY(-50%)
                 left: -66px
                 border: 0
+                outline: none
                 img
                     width: 31px
                     height: 50px
@@ -181,17 +203,17 @@
                         border: 1px solid #000
                         outline: none
                         
-
-
 .catalog
+    position: relative
+    z-index: -1 
     padding: 100px 0
     .title
-        text-align: center
-        font-weight: 400
-        line-height: 48px
-        text-transform: uppercase
         padding-bottom: 38px
-
+        font-size: 36px
+        font-weight: 700
+        line-height: 48px
+        text-align: center
+        text-transform: uppercase
     .catalog__tab
         display: flex
         justify-content: center
@@ -345,12 +367,14 @@
                 border: none
 
 .feedback
+    position: relative
+    z-index: -1 
     .container
         width: 950px
         .title
             padding: 0 0 60px 0
             text-align: center
-            font-size: 30px
+            font-size: 36px
             font-weight: 700
             line-height: 30px
             text-transform: uppercase
@@ -382,6 +406,7 @@
     position: relative
     top: 0
     left: 0
+    z-index: -1 
     .footer__info-wrapper
         padding: 50px 54px 56px 54px
         text-align: center

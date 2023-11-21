@@ -36,5 +36,11 @@ $(document).ready(function(){
     toggleSlide('.catalog-item_link')
     toggleSlide('.catalog-item__back')
 
+    $('.header__burger').click(function() {
+        $('.header__burger').toggleClass('active');
+        $('.header__menu').toggleClass('active');
+        $('body').toggleClass('lock');
+    })
+
 });
 

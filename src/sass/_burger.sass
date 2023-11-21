@@ -1,0 +1,36 @@
+@media (max-width:768px)
+    .header__burger
+        position: relative
+        z-index: 10
+        &::before,
+        &::after,
+        span
+            content: ''
+            position: absolute
+            right: 0
+            z-index: 0
+            width: 35px
+            height: 3px
+            background-color: white
+            transition: all 0.25s
+        &::before
+            bottom: 45px
+        &::after
+            bottom: 25px
+        span
+            bottom: 35px
+    
+        &.active::before
+            transform: rotate(45deg)
+            bottom: 35px
+
+        &.active::after
+            transform: rotate(-45deg)
+            bottom: 35px
+
+        &.active span
+            transform: scale(0)
+        
+
+    body.lock
+        overflow: hidden
