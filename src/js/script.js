@@ -1,3 +1,17 @@
+"use strict"
+
+const modal = document.getElementById('myModal');
+
+window.onload = function () {
+    modal.style.display = 'block';
+};
+
+
+function closeModal() {
+    modal.style.display = 'none';
+}
+
+
 $(document).ready(function(){
     $('.carousel__inner').slick({
         dots: true,
@@ -42,5 +56,10 @@ $(document).ready(function(){
         $('body').toggleClass('lock');
     })
 
-});
 
+    $(document).ready(function () {
+        $('.modal__ok-button').click(function (event) {
+            $("body").removeClass('modal-open');
+        });
+    });
+});

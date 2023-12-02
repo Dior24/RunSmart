@@ -5,6 +5,43 @@ body
     position: relative
     z-index: -1
 
+body.modal-open 
+    overflow: hidden
+
+
+.modal
+    position: fixed
+    top: 0
+    left: 0
+    z-index: 1000
+    width: 100%
+    height: 100%
+    background-color: rgba(0, 0, 0, 0.5)
+
+    &-content
+        position: absolute
+        top: 40%
+        left: 50%
+        max-width: 500px
+        width: 90%
+        color: black
+        background-color: white
+        padding: 20px
+        border: 2px solid #C70101
+        border-radius: 10px
+        transform: translate(-50%, -50%)
+
+    .button-container
+        text-align: right
+        .modal__ok-button
+            cursor: pointer
+            padding: 10px 20px
+            color: white
+            background-color: #C70101
+            border: none
+            border-radius: 5px
+            margin-left: auto
+
 .header
     display: none
     

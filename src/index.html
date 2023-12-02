@@ -10,11 +10,19 @@
     <link rel="stylesheet" href="bootstrap/js/bootstrap.bundle.min.js">
     <link rel="stylesheet" href="css/style.min.css">
     <link rel="stylesheet" href="css/slick.css">
-    <script src="js/script.js"></script>
     <title>RunSmart</title>
 </head>
 
-<body>
+<body class="modal-open">
+    
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <p>Отключите режим энергосбережения для корректной работы анимаций</p>
+            <div class="button-container">
+                <button class="modal__ok-button" onclick="closeModal()">OK</button>
+            </div>
+        </div>
+    </div>
     <header class="header">
         <div class="header__content">
             <div class="header__logo">RunSmart</div>
