@@ -1,7 +1,7 @@
 $(document).ready(function(){
     $('.carousel__inner').slick({
         dots: true,
-        speed: 1000,
+        speed: 250,
         slidesToShow: 1,
         adaptiveHeight: true,
         prevArrow: '<button type="button" class="slick-prev"><img src="icons/arrows/left.svg"></button>',
