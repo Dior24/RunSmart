@@ -68,6 +68,34 @@
         .advantages__content
             flex-wrap: wrap
 
+    .consultation
+        .consultation__form
+            .consultation__form-item
+                @include input
+                width: 100%
+            .consultation__form-button
+                @include button
+                width: 100%
+
+    .carousel
+        padding: 50px 0
+        .container
+            width: 100%
+        .title
+            display: none
+        .subtitle
+            display: none
+        .carousel__content
+            margin: 0 auto
+            width: 80%
+            height: 80%
+            .carousel__inner
+                position: relative
+                top: 0
+                left: 0
+                img
+                    width: 100%
+                    height: 100%
 
 @media (max-width:512px)
     .promo
@@ -92,9 +120,15 @@
                         &__block
                             margin: 10px
 
-    
     .advantages
         .title
             font-size: 30px
         .advantages__content
             flex-wrap: wrap
+    
+    .consultation
+        .title
+            font-size: 30px
+            text-align: center
+        .subtitle
+            display: none
