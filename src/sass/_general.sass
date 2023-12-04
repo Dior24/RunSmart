@@ -7,40 +7,13 @@ body
 
 body.modal-open 
     overflow: hidden
-
-
-.modal
-    position: fixed
-    top: 0
-    left: 0
-    z-index: 1000
-    width: 100%
-    height: 100%
-    background-color: rgba(0, 0, 0, 0.5)
-
-    &-content
-        position: absolute
-        top: 40%
-        left: 50%
-        max-width: 500px
-        width: 90%
-        color: black
-        background-color: white
-        padding: 20px
-        border: 2px solid #C70101
-        border-radius: 10px
-        transform: translate(-50%, -50%)
-
-    .button-container
-        text-align: right
-        .modal__ok-button
-            cursor: pointer
-            padding: 10px 20px
-            color: white
-            background-color: #C70101
-            border: none
-            border-radius: 5px
-            margin-left: auto
+    .overlay
+        display: block
+        #open
+            display: block
+            
+body.lock
+    overflow: hidden
 
 .header
     display: none
@@ -488,3 +461,78 @@ body.modal-open
                 padding: 14px
                 border: 1px solid $color1
                 border-radius: 100%
+
+.overlay
+    position: fixed
+    top: 0
+    left: 0
+    width: 100%
+    height: 100%
+    z-index: 1000
+    display: none
+    background-color: rgba(0, 0, 0, 0.5)
+    .modal
+        position: absolute
+        top: 50%
+        left: 50%
+        min-width: 380px
+        min-height: 400px
+        padding: 40px
+        background-color: #f2f2f2
+        transform: translate(-50%, -50%)
+        &__close
+            cursor: pointer
+            position: absolute
+            top: -36px
+            right: -50px
+            font-size: 65px
+            color: $color2
+        &__subtitle
+            font-size: 16.9px
+            font-weight: 700
+            text-align: center
+        &__descr
+            font-size: 14px
+            font-weight: 400
+            text-align: center
+        &__mini
+            min-height: 140px
+        &__open
+            top: 35%
+            min-width: 300px
+            max-width: 700px
+            min-height: auto
+            .modal_subtitle
+                font-size: 16px
+            .modal__descr
+                font-size: 14px
+                font-weight: 400
+                text-align: center
+                max-width: 250px
+            .modal__button
+                @include button
+                width: 100px
+                height: 58px
+                display: block
+                margin: 20px auto 0 auto
+        .consultation__form
+            display: flex
+            flex-direction: column
+            padding: 20px 0 0 0
+            .consultation__form-item
+                @include input
+                border: 2px solid #f2f2f2
+            .consultation__form-button
+                @include button
+                width: 303px
+                height: 58px
+                margin: 8px 0
+                flex-shrink: 0
+                text-align: center
+                font-size: 16px
+                font-weight: 500
+                text-transform: uppercase
+
+    #open, #consultationModal, #order, #thanks
+        display: none
+

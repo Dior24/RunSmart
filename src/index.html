@@ -14,15 +14,7 @@
 </head>
 
 <body class="modal-open">
-    
-    <div id="myModal" class="modal">
-        <div class="modal-content">
-            <p>Отключите режим энергосбережения для корректной работы анимаций</p>
-            <div class="button-container">
-                <button class="modal__ok-button" onclick="closeModal()">OK</button>
-            </div>
-        </div>
-    </div>
+
     <header class="header">
         <div class="header__content">
             <div class="header__logo">RunSmart</div>
@@ -56,7 +48,7 @@
                     </div>
                     <div class="header__phone">
                         <a href="tel:+79680603084" class="header__phone-number">+7 (968) 060-30-84</a>
-                        <button class="header__button">заказать звонок</button>
+                        <button data-modal="consultationModal" class="header__button">заказать звонок</button>
                     </div>
                 </header>
                 <div class="product-presen">
@@ -77,8 +69,8 @@
                         </div>
                     </div>
 
-                    <button class="product-presen__button">заказать консультацию</button>
-                    <div class="product-presen__subbutton">или <a href="#">ПЕРЕЙТИ В КАТАЛОГ</a></div>
+                    <button data-modal="consultationModal" class="product-presen__button">заказать консультацию</button>
+                    <div class="product-presen__subbutton">или <a href="#catalog">ПЕРЕЙТИ В КАТАЛОГ</a></div>
                 </div>
             </div>
         </div>
@@ -126,7 +118,7 @@
                 <form action="#" class="consultation__form">
                     <input type="text" name="name" class="consultation__form-item firstname" placeholder="Ваше имя"
                         required>
-                    <input type="tel" name="phone" class="consultation__form-item phone" placeholder="Ваше телефон"
+                    <input type="tel" name="phone" class="consultation__form-item phone" placeholder="Ваше телефон" pattern="^\+7 \(\d{3}\) \d{3}-\d{2}-\d{2}$"
                         required>
                     <input type="email" name="email" class="consultation__form-item email" placeholder="Ваша email"
                         required>
@@ -630,25 +622,74 @@
         </div>
         <div class="footer__info">
             <div class="footer__info-wrapper">
-                <a class="footer__info-address" target="_blank" href="https://yandex.ru/maps/213/moscow/house/myasnitskiy_proyezd_3s1/Z04YcANmTkcEQFtvfXt3eXthYA==/?ll=37.646722%2C55.768725&z=16.79">Москва, Мясницкий проезд, д.3с1</ф>
-                <a href="tel:+74999228974" class="footer__info-phone">+7 (499) 922-89-74</a>
-                <div class="footer__info-social">
-                    <div class="footer__info-social-item"><a href="https://vk.com/diordnfl"><img
-                                src="img/social/facebook.svg" alt="" class="facebook"></a></div>
-                    <div class="footer__info-social-item"><a href="https://www.instagram.com/"><img
-                                src="img/social/instagram.svg" alt="" class="instagram"></a></div>
-                    <div class="footer__info-social-item"><a href=""><img src="img/social/pinterest.svg" alt=""
-                                class="pinterest"></a></div>
-                </div>
+                <a class="footer__info-address" target="_blank"
+                    href="https://yandex.ru/maps/213/moscow/house/myasnitskiy_proyezd_3s1/Z04YcANmTkcEQFtvfXt3eXthYA==/?ll=37.646722%2C55.768725&z=16.79">Москва,
+                    Мясницкий проезд, д.3с1</ф>
+                    <a href="tel:+74999228974" class="footer__info-phone">+7 (499) 922-89-74</a>
+                    <div class="footer__info-social">
+                        <div class="footer__info-social-item"><a href="https://vk.com/diordnfl"><img
+                                    src="img/social/facebook.svg" alt="" class="facebook"></a></div>
+                        <div class="footer__info-social-item"><a href="https://www.instagram.com/"><img
+                                    src="img/social/instagram.svg" alt="" class="instagram"></a></div>
+                        <div class="footer__info-social-item"><a href=""><img src="img/social/pinterest.svg" alt=""
+                                    class="pinterest"></a></div>
+                    </div>
             </div>
         </div>
     </footer>
+
+    <div class="overlay">
+        <div class="modal modal__open" id="open">
+            <div class="modal__subtitle">Режим энергосбережения</div>
+            <div class="modal__descr">Пожалуйста, отключите режим энергосбережения для наслаждения анимациями</div>
+            <button type="submit" class="modal__button" onclick="closeModal()">Ок</button>
+        </div>
+
+        <div class="modal" id="consultationModal">
+            <div class="modal__close">&times;</div>
+            <div class="modal__subtitle">Просто заполните форму заявки</div>
+            <div class="modal__descr">и мы перезвоним в течении 10 минут</div>
+            <form action="#" class="consultation__form">
+                <input type="text" name="name" class="consultation__form-item firstname" placeholder="Ваше имя"
+                    required>
+                <input type="tel" name="phone" class="consultation__form-item phone" placeholder="Ваше телефон" pattern="^\+7 \(\d{3}\) \d{3}-\d{2}-\d{2}$"
+                    required>
+                <input type="email" name="email" class="consultation__form-item email" placeholder="Ваша email"
+                    required>
+                <button type="submit" class="consultation__form-button">заказать консультацию</button>
+            </form>
+        </div>
+
+        <div class="modal" id="order">
+            <div class="modal__close">&times;</div>
+            <div class="modal__subtitle">Оформление заказа:</div>
+            <div class="modal__descr"></div>
+            <form action="#" class="consultation__form">
+                <input type="text" name="name" class="consultation__form-item firstname" placeholder="Ваше имя"
+                    required>
+                <input type="tel" name="phone" class="consultation__form-item phone" placeholder="Ваше телефон" pattern="^\+7 \(\d{3}\) \d{3}-\d{2}-\d{2}$"
+                    required>
+                <input type="email" name="email" class="consultation__form-item email" placeholder="Ваша email"
+                    required>
+                <button type="submit" class="consultation__form-button">купить</button>
+            </form>
+        </div>
+
+        <div class="modal modal__mini" id="thanks">
+            <div class="modal__close">&times;</div>
+            <div class="modal__subtitle">Спасибо за вашу заявку!</div>
+            <div class="modal__descr">Наш менеджер свяжется с вами в ближайшее время!</div>
+        </div>
+    </div>
 
     <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.maskedinput/1.4.1/jquery.maskedinput.min.js"></script>
     <script src="js/slick.min.js"></script>
     <script src="js/script.js"></script>
+    <script>
+        $(".phone").mask("+7 (999) 999-99-99")
+    </script>
 </body>
 
 </html>
