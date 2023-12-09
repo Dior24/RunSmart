@@ -39,19 +39,18 @@ $(document).ready(function () {
                 e.preventDefault();
                 $('.catalog-item__list').eq(i).toggleClass('catalog-item__list_active');
                 $('.catalog-item__content').eq(i).toggleClass('catalog-item__content_active');
-            })
+            });
         });
     };
 
-    toggleSlide('.catalog-item_link')
-    toggleSlide('.catalog-item__back')
+    toggleSlide('.catalog-item_link');
+    toggleSlide('.catalog-item__back');
 
     $('.header__burger').click(function () {
         $('.header__burger').toggleClass('active');
         $('.header__menu').toggleClass('active');
         $('body').toggleClass('lock');
-    })
-
+    });
 
 
     //Modal
@@ -69,18 +68,53 @@ $(document).ready(function () {
             $('#order .modal__descr').text($('.catalog-item_subtitle').eq(i).text());
             $('.overlay, #order').fadeIn();
             $("body").toggleClass('lock');
-        })
-    })
+        });
+    });
 
     $(".modal__close").on('click', function() {
         $('.overlay, #consultationModal, #order, #thanks').fadeOut();
         $("body").removeClass('lock');
-    })
+    });
+
+    // $(".phone").mask("+7 (999) 999-99-99");
+
+    function validateForms(item) {
+        $(item).validate({
+            rules: {
+                name: {
+                    required: true,
+                    minlength: 2,
+                },
+                phone: "required",
+                email: {
+                    required: true,
+                    email: true
+                }
+            },
+    
+            messages: {
+                name: {
+                    required: "Введите свое имя",
+                    minlength: jQuery.validator.format('Введите минимум {0} символа'),
+    
+                },
+                phone: "Введите свой номер телефона",
+                email: {
+                    required: "Введите свой адрес почты", 
+                    email: "Неправильно введена почта"
+                }
+            }
+        });
+    };
+
+    validateForms('#consultation form');
+    validateForms('#consultationModal form');
+    validateForms('#order form');
+
+
 
     function emailTest(input) {
         return !/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,8})+$/.test(input.value);
-    }
-
-    emailTest(email)
-
+    };
+    emailTest(email);
 });

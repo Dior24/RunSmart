@@ -110,18 +110,16 @@
         </div>
     </section>
 
-    <section class="consultation" id="consultation">
+    <section class="consultation" id="consultation" method="get">
         <div class="container">
             <div class="consultation__content">
                 <h1 class="title">Получите бесплатную консультацию <br> по подбору пульсометра </h1>
                 <p class="subtitle">Просто заполните форму заявки <br>и мы перезвоним вам в течении 10 минут</p>
                 <form action="#" class="consultation__form">
-                    <input type="text" name="name" class="consultation__form-item firstname" placeholder="Ваше имя"
-                        required>
-                    <input type="tel" name="phone" class="consultation__form-item phone" placeholder="Ваше телефон" pattern="^\+7 \(\d{3}\) \d{3}-\d{2}-\d{2}$"
-                        required>
-                    <input type="email" name="email" class="consultation__form-item email" placeholder="Ваша email"
-                        required>
+                    <input type="text" name="name" class="consultation__form-item firstname" placeholder="Ваше имя">
+                    <input type="tel" name="phone" class="consultation__form-item phone" placeholder="Ваше телефон"
+                        pattern="^\+7 \(\d{3}\) \d{3}-\d{2}-\d{2}$">
+                    <input type="email" name="email" class="consultation__form-item email" placeholder="Ваша email">
                     <button type="submit" class="consultation__form-button">заказать консультацию</button>
                 </form>
             </div>
@@ -650,12 +648,10 @@
             <div class="modal__subtitle">Просто заполните форму заявки</div>
             <div class="modal__descr">и мы перезвоним в течении 10 минут</div>
             <form action="#" class="consultation__form">
-                <input type="text" name="name" class="consultation__form-item firstname" placeholder="Ваше имя"
-                    required>
-                <input type="tel" name="phone" class="consultation__form-item phone" placeholder="Ваше телефон" pattern="^\+7 \(\d{3}\) \d{3}-\d{2}-\d{2}$"
-                    required>
-                <input type="email" name="email" class="consultation__form-item email" placeholder="Ваша email"
-                    required>
+                <input type="text" name="name" class="consultation__form-item firstname" placeholder="Ваше имя">
+                <input type="tel" name="phone" class="consultation__form-item phone" placeholder="Ваше телефон"
+                    pattern="^\+7 \(\d{3}\) \d{3}-\d{2}-\d{2}$">
+                <input type="email" name="email" class="consultation__form-item email" placeholder="Ваша email">
                 <button type="submit" class="consultation__form-button">заказать консультацию</button>
             </form>
         </div>
@@ -665,12 +661,10 @@
             <div class="modal__subtitle">Оформление заказа:</div>
             <div class="modal__descr"></div>
             <form action="#" class="consultation__form">
-                <input type="text" name="name" class="consultation__form-item firstname" placeholder="Ваше имя"
-                    required>
-                <input type="tel" name="phone" class="consultation__form-item phone" placeholder="Ваше телефон" pattern="^\+7 \(\d{3}\) \d{3}-\d{2}-\d{2}$"
-                    required>
-                <input type="email" name="email" class="consultation__form-item email" placeholder="Ваша email"
-                    required>
+                <input name="name" type="text"class="consultation__form-item firstname" placeholder="Ваше имя">
+                <input name="phone" type="tel" class="consultation__form-item phone" placeholder="Ваше телефон"
+                    pattern="^\+7 \(\d{3}\) \d{3}-\d{2}-\d{2}$">
+                <input name="email" type="email" class="consultation__form-item email" placeholder="Ваша email">
                 <button type="submit" class="consultation__form-button">купить</button>
             </form>
         </div>
@@ -685,11 +679,9 @@
     <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.maskedinput/1.4.1/jquery.maskedinput.min.js"></script>
+    <script src="js/jquery.validate.min.js"></script>
     <script src="js/slick.min.js"></script>
     <script src="js/script.js"></script>
-    <script>
-        $(".phone").mask("+7 (999) 999-99-99")
-    </script>
 </body>
 
 </html>
