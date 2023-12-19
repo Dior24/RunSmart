@@ -76,7 +76,12 @@ $(document).ready(function () {
         $("body").removeClass('lock');
     });
 
-    // $(".phone").mask("+7 (999) 999-99-99");
+    $("input[name=phone]").mask("+7 (999) 999-99-99");
+
+    // function emailTest(input) {
+    //     return !/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,8})+$/.test(input.value);
+    // };
+    // emailTest($('#email'));
 
     function validateForms(item) {
         $(item).validate({
@@ -111,10 +116,23 @@ $(document).ready(function () {
     validateForms('#consultationModal form');
     validateForms('#order form');
 
+    $('form').submit(function(e) {
+        e.preventDefault();
+
+        if (!$(this).valid()) {
+            return;
+        }
+
+        $.ajax({
+            type: "POST",
+            url: "../mailer/smart.php",
+            data: $(this).serialize()
+        }).done(function() {
+            $(this).find("input").val("");
 
 
-    function emailTest(input) {
-        return !/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,8})+$/.test(input.value);
-    };
-    emailTest(email);
+            $("form").trigger("reset");
+        });
+        return false;
+    });
 });

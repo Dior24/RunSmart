@@ -13,7 +13,7 @@
     <title>RunSmart</title>
 </head>
 
-<body class="modal-open">
+<body>
 
     <header class="header">
         <div class="header__content">
@@ -117,8 +117,7 @@
                 <p class="subtitle">Просто заполните форму заявки <br>и мы перезвоним вам в течении 10 минут</p>
                 <form action="#" class="consultation__form">
                     <input type="text" name="name" class="consultation__form-item firstname" placeholder="Ваше имя">
-                    <input type="tel" name="phone" class="consultation__form-item phone" placeholder="Ваше телефон"
-                        pattern="^\+7 \(\d{3}\) \d{3}-\d{2}-\d{2}$">
+                    <input type="tel" name="phone" class="consultation__form-item phone" placeholder="Ваше телефон">
                     <input type="email" name="email" class="consultation__form-item email" placeholder="Ваша email">
                     <button type="submit" class="consultation__form-button">заказать консультацию</button>
                 </form>
@@ -647,10 +646,9 @@
             <div class="modal__close">&times;</div>
             <div class="modal__subtitle">Просто заполните форму заявки</div>
             <div class="modal__descr">и мы перезвоним в течении 10 минут</div>
-            <form action="#" class="consultation__form">
+            <form action="mailer/smart.php" class="consultation__form">
                 <input type="text" name="name" class="consultation__form-item firstname" placeholder="Ваше имя">
-                <input type="tel" name="phone" class="consultation__form-item phone" placeholder="Ваше телефон"
-                    pattern="^\+7 \(\d{3}\) \d{3}-\d{2}-\d{2}$">
+                <input type="tel" name="phone" class="consultation__form-item phone" placeholder="Ваше телефон">
                 <input type="email" name="email" class="consultation__form-item email" placeholder="Ваша email">
                 <button type="submit" class="consultation__form-button">заказать консультацию</button>
             </form>
@@ -660,10 +658,9 @@
             <div class="modal__close">&times;</div>
             <div class="modal__subtitle">Оформление заказа:</div>
             <div class="modal__descr"></div>
-            <form action="#" class="consultation__form">
-                <input name="name" type="text"class="consultation__form-item firstname" placeholder="Ваше имя">
-                <input name="phone" type="tel" class="consultation__form-item phone" placeholder="Ваше телефон"
-                    pattern="^\+7 \(\d{3}\) \d{3}-\d{2}-\d{2}$">
+            <form action="mailer/smart.php" class="consultation__form">
+                <input name="name" type="text" class="consultation__form-item firstname" placeholder="Ваше имя">
+                <input name="phone" type="tel" class="consultation__form-item phone" placeholder="Ваше телефон">
                 <input name="email" type="email" class="consultation__form-item email" placeholder="Ваша email">
                 <button type="submit" class="consultation__form-button">купить</button>
             </form>
