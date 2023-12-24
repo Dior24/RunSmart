@@ -132,7 +132,8 @@ $(document).ready(function () {
         }).done(function() {
             $(this).find("input").val("");
             $('body').removeClass('sending');
-            alert('Данные успешно отправлены на почту')
+            $('#consultationModal, #order').fadeOut();
+            $('.overlay, #thanks').fadeIn('slow');
             $("form").trigger("reset");
         });
         return false;
