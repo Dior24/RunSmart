@@ -5,15 +5,36 @@ body
     position: relative
     z-index: -1
 
-// body.modal-open 
-//     overflow: hidden
-//     .overlay
-//         display: block
-//         #open
-//             display: block
+body.modal-open 
+    overflow: hidden
+    .overlay
+        display: block
+        #open
+            display: block
             
 body.lock
     overflow: hidden
+
+body.sending
+    position: relative
+    z-index: 1000
+
+body::after
+    content: ""
+    position: absolute
+    top: 0
+    left: 0
+    z-index: 1000
+    width: 100%
+    height: 100%
+    background: rgba(51, 51, 51, 0.7) url('../icons/loading-waiting.gif') center / 50px no-repeat fixed
+    opacity: 0
+    visibility: hidden
+    transition: all 0.5s ease 0s
+
+body.sending::after
+    opacity: 1
+    visibility: visible
 
 .header
     display: none
@@ -493,6 +514,9 @@ body.lock
             right: -50px
             font-size: 65px
             color: $color2
+            transition: ease-in-out 0.15s
+            &:hover
+                transform: rotate(0.25turn)
         &__subtitle
             font-size: 16.9px
             font-weight: 700

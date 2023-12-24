@@ -121,18 +121,23 @@ $(document).ready(function () {
 
         if (!$(this).valid()) {
             return;
+        } else {
+            $('body').addClass('sending');
         }
 
         $.ajax({
             type: "POST",
-            url: "../mailer/smart.php",
+            url: "mailer/smart.php",
             data: $(this).serialize()
         }).done(function() {
             $(this).find("input").val("");
-
-
+            $('body').removeClass('sending');
+            alert('Данные успешно отправлены на почту')
             $("form").trigger("reset");
         });
         return false;
+
     });
+
+
 });
